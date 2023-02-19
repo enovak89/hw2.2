@@ -16,12 +16,12 @@ public abstract class Hogwarts {
 
     public void compareHogwartsStudents(Hogwarts student) {
         if (transgrDistance + witchPower > student.transgrDistance + student.witchPower) {
-            System.out.printf("%nStudent %s is better than student %s", getName(), student.getName());
+            System.out.printf("%nHogwarts student %s is better than student %s", getName(), student.getName());
         }
         else if (transgrDistance + witchPower == student.transgrDistance + student.witchPower) {
-            System.out.printf("%nStudent %s is the same as student %s", getName(), student.getName());
+            System.out.printf("%nHogwarts student %s is the same as student %s", getName(), student.getName());
         } else {
-            System.out.printf("%nStudent %s is better than student %s", student.getName(), getName());
+            System.out.printf("%nHogwarts student %s is better than student %s", student.getName(), getName());
         }
     }
 
