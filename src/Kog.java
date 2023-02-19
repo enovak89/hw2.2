@@ -19,10 +19,14 @@ public class Kog extends Hogwarts {
         System.out.printf(", mind: %d, wisdom: %d, wit: %d, creation: %d", getMind(), getWisdom(), getWit(), getCreation());
     }
 
+    @Override
+    public int sumSkills() {
+        return super.sumSkills() + getMind() + getWisdom() + getWit() + getCreation();
+    }
     public void compareKogStudents(Kog student) {
-        if (getMind() + getWisdom() + getWit() + getCreation() > student.getMind() + student.getWisdom() + student.getWit() + student.getCreation()) {
+        if (sumSkills() > student.sumSkills()) {
             System.out.printf("%nStudent %s is better Kogtewrans than student %s", getName(), student.getName());
-        } else if (getMind() + getWisdom() + getWit() + getCreation() == student.getMind() + student.getWisdom() + student.getWit() + student.getCreation()) {
+        } else if (sumSkills() == student.sumSkills()) {
             System.out.printf("%nStudent %s is the same Kogtewrans as student %s", getName(), student.getName());
         } else {
             System.out.printf("%nStudent %s is better Kogtewrans than student %s", student.getName(), getName());

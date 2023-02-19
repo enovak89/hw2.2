@@ -19,11 +19,11 @@ public class Main {
         jastin.printStudent();
         marcus.printStudent();
         drako.printStudent();
-        marcus.compareHogwartsStudents(drako);
-        ron.compareGrifStudents(germiona);
-        zaharia.comparePufStudents(sedrik);
-        chang.compareKogStudents(padme);
-        gregor.compareSlizStudents(drako);
+        marcus.compare(drako);
+        ron.compare(germiona);
+        zaharia.compare(sedrik);
+        chang.compare(padme);
+        gregor.compare(drako);
 
 
     }

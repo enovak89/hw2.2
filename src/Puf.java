@@ -17,10 +17,16 @@ public class Puf extends Hogwarts{
         System.out.printf(", industriousness: %d, loyalty: %d, honesty: %d", getIndus(), getLoyalty(), getHonesty());
     }
 
-    public void comparePufStudents(Puf student) {
-        if (getIndus() + getLoyalty() + getHonesty() > student.getIndus() + student.getLoyalty() + student.getHonesty()) {
+    @Override
+    public int sumSkills() {
+        return super.sumSkills() + getIndus() + getLoyalty() + getHonesty();
+    }
+
+
+    public void compare(Puf student) {
+        if (sumSkills() > student.sumSkills()) {
             System.out.printf("%nStudent %s is better Puffends than student %s", getName(), student.getName());
-        } else if (getIndus() + getLoyalty() + getHonesty() == student.getIndus() + student.getLoyalty() + student.getHonesty()) {
+        } else if (sumSkills() == student.sumSkills()) {
             System.out.printf("%nStudent %s is the same Puffends as student %s", getName(), student.getName());
         } else {
             System.out.printf("%nStudent %s is better Puffends than student %s", student.getName(), getName());

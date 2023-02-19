@@ -22,12 +22,15 @@ public class Sliz extends Hogwarts{
                 getAmbition(), getResource(), getLust());
     }
 
-    public void compareSlizStudents(Sliz student) {
-        if (getCunning() + getDetermination() + getAmbition() + getResource() + getLust() > student.getCunning() +
-                student.getDetermination() + student.getAmbition() + student.getResource() + student.getLust()) {
+    @Override
+    public int sumSkills() {
+        return super.sumSkills() + getCunning() + getDetermination() +
+                getAmbition() + getResource() + getLust();
+    }
+    public void compare(Sliz student) {
+        if (sumSkills() > student.sumSkills()) {
             System.out.printf("%nStudent %s is better Slizerin than student %s", getName(), student.getName());
-        } else if (getCunning() + getDetermination() + getAmbition() + getResource() + getLust() == student.getCunning() +
-                student.getDetermination() + student.getAmbition() + student.getResource() + student.getLust()) {
+        } else if (sumSkills() == student.sumSkills()) {
             System.out.printf("%nStudent %s is the same Slizerin as student %s", getName(), student.getName());
         } else {
             System.out.printf("%nStudent %s is better Slizerin than student %s", student.getName(), getName());

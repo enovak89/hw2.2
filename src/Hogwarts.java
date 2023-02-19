@@ -14,11 +14,14 @@ public abstract class Hogwarts {
         System.out.printf("%nStudent information%nname: %s, faculty: %s, witch power: %d, trans distance: %d", getName(), getFaculty(), getWitchPower(), getTransgrDistance());
     }
 
-    public void compareHogwartsStudents(Hogwarts student) {
-        if (transgrDistance + witchPower > student.transgrDistance + student.witchPower) {
+    public int sumSkills() {
+        return getTransgrDistance() + getWitchPower();
+    }
+    public void compare(Hogwarts student) {
+        if (sumSkills() > student.sumSkills()) {
             System.out.printf("%nHogwarts student %s is better than student %s", getName(), student.getName());
         }
-        else if (transgrDistance + witchPower == student.transgrDistance + student.witchPower) {
+        else if (sumSkills() == student.sumSkills()) {
             System.out.printf("%nHogwarts student %s is the same as student %s", getName(), student.getName());
         } else {
             System.out.printf("%nHogwarts student %s is better than student %s", student.getName(), getName());

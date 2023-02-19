@@ -17,10 +17,15 @@ public class Grif extends Hogwarts{
         System.out.printf(", nobility: %d, honor: %d, bravery: %d", getNobility(), getHonor(), getBravery());
     }
 
-    public void compareGrifStudents(Grif student) {
-        if (getNobility() + getHonor() + getBravery() > student.getNobility() + student.getHonor() + student.getBravery()) {
+    @Override
+    public int sumSkills() {
+        return super.sumSkills() + getNobility() + getHonor() + getBravery();
+    }
+
+    public void compare(Grif student) {
+        if (sumSkills() > student.sumSkills()) {
             System.out.printf("%nStudent %s is better Griffindors than student %s", getName(), student.getName());
-        } else if (getNobility() + getHonor() + getBravery() == student.getNobility() + student.getHonor() + student.getBravery()) {
+        } else if (sumSkills() == student.sumSkills()) {
             System.out.printf("%nStudent %s is the same Griffindors as student %s", getName(), student.getName());
         } else {
             System.out.printf("%nStudent %s is better Griffindors than student %s", student.getName(), getName());
